@@ -4,7 +4,7 @@ const fetch = require('node-fetch');
 module.exports = {
   data: new SlashCommandBuilder().setName('gpt4').setDescription('Utilizar o GPT-4').addStringOption(option => option.setName('input').setDescription('Texto de entrada').setRequired(true)),
   async execute(interaction) {
-	 await interaction.deferReply(); 
+     await interaction.deferReply(); 
 	  
      const res = await fetch('https://api.openai.com/v1/chat/completions', {
        method: 'POST',
@@ -21,9 +21,9 @@ module.exports = {
 
     const kk = await res.json()
 	
-	if(!kk.choices[0].message.content) {
-	  return interaction.editReply({ content: 'Ocorreu um erro.', ephemeral: true })
-	}
+    if(!kk.choices[0].message.content) {
+      return interaction.editReply({ content: 'Ocorreu um erro.', ephemeral: true })
+    }
 		  
     await interaction.editReply({ content: kk.choices[0].message.content });
   },

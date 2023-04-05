@@ -13,7 +13,7 @@ module.exports = {
          'Authorization': 'Bearer API_KEY_OPENAI'
        },
         body: JSON.stringify({
-          model: "gpt-4",
+          model: "gpt-4", // models: GET request to https://api.openai.com/v1/models with the auth header
           messages: [{"role": "user", "content": interaction.options.getString('input')}],
           temperature: 0.7
         })

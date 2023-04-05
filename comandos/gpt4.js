@@ -22,7 +22,8 @@ module.exports = {
     const kk = await res.json()
 	
     if(!kk.choices[0].message.content) {
-      return interaction.editReply({ content: 'Ocorreu um erro.', ephemeral: true })
+      console.error(kk);
+      return interaction.editReply({ content: 'Ocorreu um erro.', ephemeral: true });
     }
 		  
     await interaction.editReply({ content: kk.choices[0].message.content });

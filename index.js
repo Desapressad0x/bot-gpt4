@@ -15,7 +15,7 @@ for (const arq of arquivos) {
  * @returns {Promise<void>} - Registra os slash commands e indica que o bot está online
  */
 client.on('ready', async () => {
-  console.log('Ligado.');
+  console.log('Bot started.');
 
   for (const guild of client.guilds.cache.values()) {
     const comandos = await guild.commands.set(client.slashCommands.map(({data}) => data));

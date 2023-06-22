@@ -11,6 +11,9 @@ for (const arq of arquivos) {
   client.slashCommands.set(comando.data.name, comando);
 }
 
+/**
+ * @returns {Promise<void>} - Registra os slash commands e indica que o bot está online
+ */
 client.on('ready', async () => {
   console.log('Ligado.');
 
@@ -20,6 +23,10 @@ client.on('ready', async () => {
   }
 });
 
+/**
+ * @param {Object} interaction - O objeto de interação recebido.
+ * @returns {Promise<void>} - Cria as interações dos slash commands
+ */
 client.on('interactionCreate', async (interaction) => {
   if (!interaction.isCommand()) return;
 

@@ -19,7 +19,7 @@ client.on('ready', async () => {
 
   for (const guild of client.guilds.cache.values()) {
     const comandos = await guild.commands.set(client.slashCommands.map(({data}) => data));
-    console.log(`Registrado ${comandos.size} comando${comandos.size > 1 || comandos.size === 0 ? 's' : ''} pra guild ${guild.name}`);
+    console.log(`Registered ${comandos.size} command{comandos.size > 1 || comandos.size === 0 ? 's' : ''} for the guild ${guild.name}`);
   }
 });
 
@@ -38,7 +38,7 @@ client.on('interactionCreate', async (interaction) => {
     await cmd.execute(interaction);
   } catch (error) {
     console.error(error);
-    await interaction.reply({ content: 'Ocorreu um erro.', ephemeral: true });
+    await interaction.reply({ content: 'An error occurred.', ephemeral: true });
   }
 });
 

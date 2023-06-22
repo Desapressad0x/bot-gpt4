@@ -2,7 +2,7 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 const fetch = require('node-fetch');
 
 module.exports = {
-  data: new SlashCommandBuilder().setName('gpt4').setDescription('Utilizar o GPT-4').addStringOption(option => option.setName('input').setDescription('Texto de entrada').setRequired(true)),
+  data: new SlashCommandBuilder().setName('gpt4').setDescription('Use GPT-4').addStringOption(option => option.setName('input').setDescription('Input text').setRequired(true)),
   async execute(interaction) {
      await interaction.deferReply(); 
 	  
@@ -23,7 +23,7 @@ module.exports = {
 	
     if(!kk.choices[0].message.content) {
       console.error(kk);
-      return interaction.editReply({ content: 'Ocorreu um erro.', ephemeral: true });
+      return interaction.editReply({ content: 'An error occurred.', ephemeral: true });
     }
 		  
     await interaction.editReply({ content: kk.choices[0].message.content });

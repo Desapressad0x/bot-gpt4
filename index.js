@@ -24,7 +24,7 @@ client.on('ready', async () => {
 });
 
 /**
- * @param {Object} interaction - O objeto de interação recebido.
+ * @param {Object} interaction - O objeto de interação recebido
  * @returns {Promise<void>} - Cria as interações dos slash commands
  */
 client.on('interactionCreate', async (interaction) => {

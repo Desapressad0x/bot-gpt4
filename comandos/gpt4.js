@@ -1,5 +1,4 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const fetch = require('node-fetch');
 
 module.exports = {
   data: new SlashCommandBuilder().setName('gpt4').setDescription('Use GPT-4').addStringOption(option => option.setName('input').setDescription('Input text').setRequired(true)),
